@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<meta charse
+		t="UTF-8">
+		<title>Aplikasi Klasifikasi Play Tennis</title>
+		<link rel="stylesheet" href="style.css"> 
+		<style>
+			div.container{
+					margin-left: 300px;
+					margin-top: 50px;
+					margin-right: 300px;
+					border: 2px solid black;
+					background-color: #bebebe;
+				}
+				header{
+					padding: 0.1em;
+					color: black;
+					background-color: #bebebe;
+					clear: left;
+					text-align: center;
+					border-bottom: 2px solid black;
+				}
+				nav{
+					background-color: #ebecf0;
+					padding: 5px;
+					border-bottom: 2px solid black;
+					text-align: right;
+				}
+				nav a{
+					color: black;
+					font-weight: bold;
+					text-decoration: none;
+					padding: 3px;
+				}
+				aside{
+					float: right;
+					padding: 1px;
+					
+					margin: 120px;
+					text-align: center;
+				}
+				article{
+					background-color: #ebecf0;
+					border-right: 2px solid black;
+					overflow: hidden;	
+					
+				}
+				article form{
+					text-decoration: none;
+					margin-right: 20px;
+					margin-left : 20px;
+				}
+				article form select{
+					width: 100%;
+					padding: 5px 5px;
+					margin: 5px 0;
+					display: inline-block;
+					border: 1px solid #bebebe);
+					border-radius: 10px;
+					box-sizing: border-box;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<header>
+				<h1>Selamat Datang di Klasifikasi Play Tennis</h1>
+			</header>
+			<nav>
+				<a>Listia Ningrum | </a>
+				<a>2008084 | </a>
+				<a>Ilmu Komputer C1</a>
+			</nav>
+			<aside>
+				<h2>Hasil Klasifikasi:</h2>
+				<h2>{{ hasil }}</h2>
+			</aside>
+			<article>
+				<h1>
+					<center>Pemilihan Kondisi</center>
+				</h1>
+				<form
+					action="{{ url_for('predict') }}" 
+					method="post">
+					<label for="outlook">Outlook</label>
+					<select name="outlook" required>
+						<option value="0">Overcast</option>
+						<option value="1">Rain</option>
+						<option value="2">Sunny</option>
+					</select>
+					<br></br>
+					<label for="temp">Temperature</label>
+					<select name="temp" required>
+						<option value="0">Cool</option>
+						<option value="1">Hot</option>
+						<option value="2">Mild</option>
+					</select>
+					<br></br>
+					<label for="humidity">Humidity</label>
+					<select name="humidity" required>
+						<option value="0">High</option>
+						<option value="1">Normal</option>
+					</select>
+					<br></br>
+					<label for="wind">Wind</label>
+					<select name="wind" required>
+						<option value="0">Strong</option>
+						<option value="1">Weak</option>
+					</select>
+					<br></br>
+					<center> 
+						<button type="submit" style="background-color: #bebebe">Cek Klasifikasi</button>
+					</center>
+				</form>
+			</article>
+		</div>
+	</body>
+</html>
